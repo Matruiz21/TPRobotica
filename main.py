@@ -5,6 +5,7 @@ SCREENWIDTH = 1300
 SCREENHEIGHT = 900
 ROBOTWIDTH = int(SCREENWIDTH / 10)
 ROBOTHEIGHT = int(SCREENHEIGHT /10)
+MOVE = 30
 
 
 
@@ -12,25 +13,25 @@ ROBOTHEIGHT = int(SCREENHEIGHT /10)
 def move_right():
     x, y = canvas.coords(robot)
     if x + ROBOTWIDTH / 2 < SCREENWIDTH:
-        canvas.move(robot, 20, 0)
+        canvas.move(robot, MOVE, 0)
 
 # Función para mover el robot hacia la izquierda
 def move_left():
     x, y = canvas.coords(robot)
     if x - ROBOTWIDTH / 2 > 0:
-        canvas.move(robot, -20, 0)
+        canvas.move(robot, -MOVE, 0)
 
 # Función para mover el robot hacia arriba
 def move_up():
     x, y = canvas.coords(robot)
     if y - ROBOTHEIGHT / 2 > 0:
-        canvas.move(robot, 0, -20)
+        canvas.move(robot, 0, -MOVE)
 
 # Función para mover el robot hacia abajo
 def move_down():
     x, y = canvas.coords(robot)
     if y + ROBOTHEIGHT / 2 < SCREENHEIGHT:
-        canvas.move(robot, 0, 20)
+        canvas.move(robot, 0, MOVE)
 
 
 # Crear la ventana principal
